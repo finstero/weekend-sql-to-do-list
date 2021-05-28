@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.0.1",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "pg": "^8.6.0"
+  },
+  "name": "weekend-sql-to-do-list",
+  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finstero/weekend-sql-to-do-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finstero/weekend-sql-to-do-list/issues"
+  },
+  "homepage": "https://github.com/finstero/weekend-sql-to-do-list#readme"
+}
