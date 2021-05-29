@@ -6,11 +6,11 @@ function onLoad(){
     console.log('hello jquery!');
     $(".dropdown-toggle").dropdown();
     getTasks();
-    
+
     //click listeners
     $('#taskButton').on('click', addTask);
-    $('#displayTasks').on('click', '.deleteTask', deleteTask);
-    $('#displayTasks').on('click', '.markComplete', markComplete);
+    // $('#displayTasks').on('click', '.deleteTask', deleteTask);
+    // $('#displayTasks').on('click', '.markComplete', markComplete);
 }
 
 function addTask(){
