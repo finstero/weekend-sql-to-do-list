@@ -47,6 +47,23 @@ router.post('/',  (req, res) => {
     });
   });
 
+router.put('/:id', (req, res) => {
+    const taskId = req.params.id;
+
+    // let completeStatus = req.body.completeStatus;
+
+    const queryString = 'UPDATE "tasks" SET "complete"=true WHERE "tasks".id = $1;';
+
+    pool.query(queryString, [taskId])
+    .then (response => {
+      console.log(response.rowCount);
+      res.sendStatus(202);
+    }).catch (error => {
+      console.log('error in put', error);
+      res.sendStatus(500);
+    })
+});
+
 
 
 module.exports = router

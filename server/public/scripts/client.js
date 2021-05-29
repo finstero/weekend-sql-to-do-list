@@ -10,7 +10,30 @@ function onLoad(){
     //click listeners
     $('#taskButton').on('click', addTask);
     $('#displayTasks').on('click', '.deleteTask', deleteHandler);
-    // $('#displayTasks').on('click', '.markComplete', markComplete);
+    $('#displayTasks').on('click', '.markComplete', handleComplete);
+}
+
+function handleComplete(){
+    console.log('clicked marked complete');
+    markComplete($(this).data("id"));
+}
+
+function markComplete(taskId){
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${taskId}`,
+        data: {
+          completeStatus: 'true'
+        }
+      })
+      .then (response => {
+        console.log('marked complete', response);
+        getTasks();
+      })
+      .catch (error => {
+        console.log('problem with marking complete', error);
+        alert('there was a problem marking task as complete');
+      });
 }
 
 function deleteHandler(){
@@ -22,10 +45,12 @@ function deleteTask(taskId){
     $.ajax({
         method: 'DELETE',
         url: `/tasks/${taskId}`
-      }).then (response => {
+      })
+      .then (response => {
         console.log('deleted task');
         getTasks();
-      }).catch( err => {
+      })
+      .catch( err => {
         alert('there was a problem deleting that task. try again.', err);
       });
 }
