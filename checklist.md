@@ -5,7 +5,7 @@
 [x] link in files to html
 
 
-[] HTML skeleton
+[x] HTML skeleton
 [x] server skeleton
 [] Database skeleton
 
