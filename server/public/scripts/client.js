@@ -9,8 +9,25 @@ function onLoad(){
 
     //click listeners
     $('#taskButton').on('click', addTask);
-    // $('#displayTasks').on('click', '.deleteTask', deleteTask);
+    $('#displayTasks').on('click', '.deleteTask', deleteHandler);
     // $('#displayTasks').on('click', '.markComplete', markComplete);
+}
+
+function deleteHandler(){
+    console.log('clicked delete');
+    deleteTask($(this).data("id"));
+}
+
+function deleteTask(taskId){
+    $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskId}`
+      }).then (response => {
+        console.log('deleted task');
+        getTasks();
+      }).catch( err => {
+        alert('there was a problem deleting that task. try again.', err);
+      });
 }
 
 function addTask(){

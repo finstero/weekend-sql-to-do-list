@@ -31,6 +31,21 @@ router.post('/',  (req, res) => {
       });
   });
 
+  router.delete('/:id', (req, res) => {
+    const taskToDelete = req.params.id;
+    console.log('item to delete', taskToDelete);
+    const queryString = `DELETE FROM "tasks" WHERE "tasks".id = $1;`
+  
+    pool.query(queryString, [taskToDelete])
+    .then( response => {
+      console.log(`deleted task with id ${taskToDelete}`);
+      res.sendStatus(200);
+    })
+    .catch( error => {
+      console.log('error in delete', error);
+      res.sendStatus(500);
+    });
+  });
 
 
 
