@@ -4,4 +4,5 @@ $(onLoad);
 
 function onLoad(){
     console.log('hello jquery!');
+    $(".dropdown-toggle").dropdown();
 }
