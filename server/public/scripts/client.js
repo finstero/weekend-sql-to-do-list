@@ -24,4 +24,15 @@ function getTasks(){
 
 function renderTasks(tasks) {
     $('#displayTasks').empty();
+    for (let task of tasks) {
+        $('#displayTasks').append(`
+            <tr>
+                <td>${task.task}</td>
+                <td>${task.priority}</td>
+                <td>${task.notes}</td>
+                <td><button class="markCompleted" data-id="${task.id}" data-complete="${task.complete}">Mark Completed</button></td>
+                <td><button class="deleteTask" data-id="${task.id}">Delete Task</button></td>
+            </tr>
+        `)
+    }
 }

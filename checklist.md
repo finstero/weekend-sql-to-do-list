@@ -9,9 +9,9 @@
 [x] server skeleton
 [] Database skeleton
 
-[] Get Route
-    [] Server and client side
-    [] associated functions with render on client
+[x] Get Route
+    [x] Server and client side
+    [x] associated functions with render on client
 
 [] POST Route for new tasks
     [] Server/db and client side
