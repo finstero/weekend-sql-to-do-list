@@ -93,14 +93,27 @@ function getTasks(){
 function renderTasks(tasks) {
     $('#displayTasks').empty();
     for (let task of tasks) {
-        $('#displayTasks').append(`
+        if (task.complete == false){
+            $('#displayTasks').append(`
+                <tr>
+                    <td>${task.task}</td>
+                    <td>${task.priority}</td>
+                    <td class="appendComplete">${task.notes}</td>
+                    <td><button class="markComplete" data-id="${task.id}" data-complete="${task.complete}">Mark Completed</button></td>
+                    <td><button class="deleteTask" data-id="${task.id}">Delete Task</button></td>
+                    </tr>
+            `);
+        }
+        else if (task.complete == true){
+            $('#displayTasks').append(`
             <tr>
                 <td>${task.task}</td>
                 <td>${task.priority}</td>
-                <td>${task.notes}</td>
-                <td><button class="markComplete" data-id="${task.id}" data-complete="${task.complete}">Mark Completed</button></td>
+                <td class="appendComplete">${task.notes}</td>
+                <td></td>
                 <td><button class="deleteTask" data-id="${task.id}">Delete Task</button></td>
-            </tr>
-        `)
+                </tr>
+        `);
+        }
     }
 }
