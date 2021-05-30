@@ -134,17 +134,17 @@ function renderTasks(tasks) {
                     <td class="appendComplete">${task.notes}</td>
                     <td><button class="markComplete btn btn-light btn-sm" data-id="${task.id}" data-complete="${task.complete}">Complete</button></td>
                     <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">Delete</button></td>
-                    </tr>
+                </tr>
             `);
         }
         else if (task.complete == true){
             $('#displayTasks').append(`
-            <tr>
-                <td><del>${task.task}</del></td>
-                <td><del>${task.priority}</del></td>
-                <td><del>${task.notes}</del></td>
-                <td></td>
-                <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">Delete</button></td>
+                <tr>
+                    <td><del>${task.task}</del></td>
+                    <td><del>${task.priority}</del></td>
+                    <td><del>${task.notes}</del></td>
+                    <td></td>
+                    <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">Delete</button></td>
                 </tr>
         `);
         }
