@@ -3,18 +3,19 @@ const router = express.Router();
 
 const pool = require('../modules/pool');
 
-
+// get route for all tasks
 router.get('/', (req, res) => {
-    let queryText = 'SELECT * FROM "tasks" ORDER BY "task";';
+    let queryText = 'SELECT * FROM "tasks" ORDER BY "priority";';
     pool.query(queryText).then(result => {
         res.send(result.rows);
     })
     .catch (error => {
-    console.log('error getting into koalas table', error);
+    console.log('error getting into tasks table', error);
     res.sendStatus(500);
     });
 });
 
+// post route for task, priority, and notes
 router.post('/',  (req, res) => {
     let newTask = req.body;
     console.log(`Adding book`, newTask);
@@ -31,6 +32,7 @@ router.post('/',  (req, res) => {
       });
   });
 
+  // delete route for deleting a task
   router.delete('/:id', (req, res) => {
     const taskToDelete = req.params.id;
     console.log('item to delete', taskToDelete);
@@ -47,10 +49,9 @@ router.post('/',  (req, res) => {
     });
   });
 
+// put route for changing complete status
 router.put('/:id', (req, res) => {
     const taskId = req.params.id;
-
-    // let completeStatus = req.body.completeStatus;
 
     const queryString = 'UPDATE "tasks" SET "complete"=true WHERE "tasks".id = $1;';
 
@@ -63,7 +64,5 @@ router.put('/:id', (req, res) => {
       res.sendStatus(500);
     })
 });
-
-
 
 module.exports = router
