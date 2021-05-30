@@ -3,21 +3,24 @@ console.log('Hello JS!');
 $(onLoad);
 
 function onLoad(){
-    console.log('hello jquery!');
-    $(".dropdown-toggle").dropdown();
+    // console.log('hello jquery!');
+    // grab tasks from database and display on DOM
     getTasks();
 
-    //click listeners
+    // click listeners
     $('#taskButton').on('click', addTask);
     $('#displayTasks').on('click', '.deleteTask', deleteHandler);
     $('#displayTasks').on('click', '.markComplete', handleComplete);
 }
 
+// grabs id in data when mark completed button clicked
+// runs markComplete function using grabbed id
 function handleComplete(){
-    console.log('clicked marked complete');
+    // console.log('clicked marked complete');
     markComplete($(this).data("id"));
 }
 
+// put route to change marked complete status in database
 function markComplete(taskId){
     $.ajax({
         method: 'PUT',
@@ -36,11 +39,14 @@ function markComplete(taskId){
       });
 }
 
+// grabs id in data when delete button clicked
+// runs deleteTask function using grabbed id
 function deleteHandler(){
     console.log('clicked delete');
     deleteTask($(this).data("id"));
 }
 
+// delete route 
 function deleteTask(taskId){
     $.ajax({
         method: 'DELETE',
@@ -62,6 +68,7 @@ function addTask(){
     newTask.priority = $( "#priorityIn option:selected" ).text();
     newTask.notes = $('#notesIn').val();
     
+    // if ()
 
     $.ajax({
         type: 'POST',
@@ -101,19 +108,19 @@ function renderTasks(tasks) {
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
                     <td class="appendComplete">${task.notes}</td>
-                    <td><button class="markComplete" data-id="${task.id}" data-complete="${task.complete}">Mark Completed</button></td>
-                    <td><button class="deleteTask" data-id="${task.id}">Delete Task</button></td>
+                    <td><button class="markComplete btn btn-light btn-sm" data-id="${task.id}" data-complete="${task.complete}">Mark Completed</button></td>
+                    <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">Delete</button></td>
                     </tr>
             `);
         }
         else if (task.complete == true){
             $('#displayTasks').append(`
             <tr>
-                <td>${task.task}</td>
-                <td>${task.priority}</td>
-                <td class="appendComplete">${task.notes}</td>
-                <td></td>
-                <td><button class="deleteTask" data-id="${task.id}">Delete Task</button></td>
+                <td><del>${task.task}</del></td>
+                <td><del>${task.priority}</del></td>
+                <td><del>${task.notes}</del></td>
+                <td>Completed!</td>
+                <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">Delete</button></td>
                 </tr>
         `);
         }
