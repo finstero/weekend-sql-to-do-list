@@ -1,3 +1,5 @@
+// const { default: swal } = require("sweetalert");
+
 console.log('Hello JS!');
 
 $(onLoad);
@@ -41,9 +43,24 @@ function markComplete(taskId){
 
 // grabs id in data when delete button clicked
 // runs deleteTask function using grabbed id
+// includes alert to confirm delete
 function deleteHandler(){
-    console.log('clicked delete');
-    deleteTask($(this).data("id"));
+    // console.log('clicked delete');
+    let deleteId = $(this).data("id")
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this task!",
+        icon: "warning",
+        buttons: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+            swal("Your task has been deleted!", {
+                icon: "success",
+            });
+            deleteTask(deleteId);
+            }
+        });
 }
 
 // delete route 
