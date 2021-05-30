@@ -11,8 +11,6 @@ function onLoad(){
     $('#taskButton').on('click', addTask);
     $('#displayTasks').on('click', '.deleteTask', deleteHandler);
     $('#displayTasks').on('click', '.markComplete', handleComplete);
-
-    // swal('Hello World!');
 }
 
 // grabs id in data when mark completed button clicked
@@ -67,6 +65,7 @@ function deleteTask(taskId){
 // post route to send object
 function addTask(){
     // console.log('add task button clicked');
+
     let taskVal = $('#taskIn').val();
     let priorityVal = $( "#priorityIn option:selected" ).text();
     let notesVal = $('#notesIn').val();
@@ -76,6 +75,8 @@ function addTask(){
     newTask.priority = priorityVal;
     newTask.notes = notesVal;
     
+    // check if user entered something into task and priority. force user to enter before
+    // adding task
     if (!taskVal){
         swal('Oops!', 'Please make sure you enter a task.');
     }
@@ -97,9 +98,14 @@ function addTask(){
             alert('unable to add task. try again later');
         });
     }
+
+    // clear task and notes inputs. set priority select back to default 'select'.
+    $('.input').val('');
+    $('#priorityIn').val('priority');
 }
 
-
+// get route for getting all tasks from server/db.
+// must be used with renderTasks
 function getTasks(){
     $.ajax({
         type: 'GET',
@@ -114,9 +120,12 @@ function getTasks(){
     })
 }
 
+// render all tasks on DOM after getting from server/db.
 function renderTasks(tasks) {
     $('#displayTasks').empty();
     for (let task of tasks) {
+
+        // display change based on if task is complete
         if (task.complete == false){
             $('#displayTasks').append(`
                 <tr>
