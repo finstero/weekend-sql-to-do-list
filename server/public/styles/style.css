@@ -29,7 +29,9 @@
     color: white;
 } */
 
-.deleteTask{
+/* main color scheme - green background */
+
+/* .deleteTask{
     background-color: #B05C5A;
 }
 
@@ -47,5 +49,51 @@
 
 .mainText{
     color: white;
+} */
+
+
+
+
+/* New Color Scheme - pink background */
+
+/* .deleteTask{
+    background-color: #E2B76B;
 }
 
+.darkText{
+    color: #65A478;
+}
+
+.mainColors{
+    background-color: #E2A39C;
+}
+
+.darkBackground{
+    background-color: #473857;
+}
+
+.mainText{
+    color: white;
+} */
+
+/* New Color Scheme - grey background */
+
+.deleteTask{
+    background-color: #DF6C69;
+}
+
+.darkText{
+    color: #576973;
+}
+
+.mainColors{
+    background-color: #BDB4C5;
+}
+
+.darkBackground{
+    background-color: #DDCD99;
+}
+
+.mainText{
+    color: white;
+}
