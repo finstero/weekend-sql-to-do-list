@@ -97,7 +97,7 @@ function addTask(){
     if (!taskVal){
         swal('Oops!', 'Please make sure you enter a task.');
     }
-    else if (priorityVal == 'priority'){
+    else if (priorityVal == 'choose priority'){
         swal('Oops!', 'Please make sure you choose a priority.');
     }
     else {
@@ -114,11 +114,11 @@ function addTask(){
             console.log('error in post', error);
             alert('unable to add task. try again later');
         });
-    }
 
-    // clear task and notes inputs. set priority select back to default 'select'.
-    $('.input').val('');
-    $('#priorityIn').val('priority');
+        // clear task and notes inputs. set priority select back to default 'select'.
+        $('.input').val('');
+        $('#priorityIn').val('priority');
+    }
 }
 
 // get route for getting all tasks from server/db.
