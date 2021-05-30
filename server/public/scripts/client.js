@@ -61,14 +61,22 @@ function deleteTask(taskId){
       });
 }
 
+// collects task info as object from inputs.
+// post route to send object
 function addTask(){
-    console.log('add task button clicked');
+    // console.log('add task button clicked');
+    let taskVal = $('#taskIn').val();
+    let priorityVal = $( "#priorityIn option:selected" ).text();
+    let notesVal = $('#notesIn').val();
+
     let newTask = {};
-    newTask.task = $('#taskIn').val();
-    newTask.priority = $( "#priorityIn option:selected" ).text();
-    newTask.notes = $('#notesIn').val();
+    newTask.task = taskVal;
+    newTask.priority = priorityVal;
+    newTask.notes = notesVal;
     
-    // if ()
+    if (!taskVal){
+
+    }
 
     $.ajax({
         type: 'POST',
@@ -84,6 +92,7 @@ function addTask(){
         alert('unable to add task. try again later');
     });
 }
+
 
 function getTasks(){
     $.ajax({
@@ -108,7 +117,7 @@ function renderTasks(tasks) {
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
                     <td class="appendComplete">${task.notes}</td>
-                    <td><button class="markComplete btn btn-light btn-sm" data-id="${task.id}" data-complete="${task.complete}">Mark Completed</button></td>
+                    <td><button class="markComplete btn btn-light btn-sm" data-id="${task.id}" data-complete="${task.complete}">Complete</button></td>
                     <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">Delete</button></td>
                     </tr>
             `);
@@ -119,7 +128,7 @@ function renderTasks(tasks) {
                 <td><del>${task.task}</del></td>
                 <td><del>${task.priority}</del></td>
                 <td><del>${task.notes}</del></td>
-                <td>Completed!</td>
+                <td></td>
                 <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">Delete</button></td>
                 </tr>
         `);
