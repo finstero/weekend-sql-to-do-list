@@ -13,10 +13,11 @@
     [x] Server and client side
     [x] associated functions with render on client
 
-[] POST Route for new tasks
+[x] POST Route for new tasks
     [] Server/db and client side
 
-[] Delete Route
+[x] Delete Route
 
 
-[] Put Route to change completed status
+[x] Put Route to change completed status
+    [] Change DOM somehow with change

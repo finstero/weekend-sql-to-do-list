@@ -59,7 +59,9 @@ function addTask(){
     console.log('add task button clicked');
     let newTask = {};
     newTask.task = $('#taskIn').val();
+    newTask.priority = $( "#priorityIn option:selected" ).text();
     newTask.notes = $('#notesIn').val();
+    
 
     $.ajax({
         type: 'POST',
