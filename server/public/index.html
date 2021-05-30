@@ -14,24 +14,24 @@
         <script src="./vendors/sweetalert.js"></script>
         <script src="./scripts/client.js"></script>
     </head>
-    <body>
-        <div class="container">
+    <body class="mainColors mainText">
+        <div class="container mainColors mainText">
             <div class="row">
                 <h1 id="toDoHeader">To Do!</h1>
-                <input class="btn btn-light input" type="text" id="taskIn" placeholder="task">
-                <select id="priorityIn" class="form-select" aria-label="Default select example">
+                <input class="btn btn-light input mainColors mainText" type="text" id="taskIn" placeholder="task">
+                <select id="priorityIn" class="form-select darkBackground mainText" aria-label="Default select example">
                     <option selected>priority</option>
                     <option value="1">low</option>
                     <option value="2">medium</option>
                     <option value="3">high</option>
                 </select>
-                <textarea class="btn btn-light input" name="notes" placeholder="notes" id="notesIn" cols="20" rows="2"></textarea>
-                <button class="btn btn-outline-light" id="taskButton">Add Task</button>
+                <textarea class="btn btn-light input mainColors mainText" name="notes" placeholder="notes" id="notesIn" cols="20" rows="2"></textarea>
+                <button class="btn btn-outline-light darkBackground" id="taskButton">Add Task</button>
             </div>
 
                 <section>
                     <h2>Tasks</h2>
-                    <table class="table">
+                    <table class="table mainColors mainText">
                         <thead>
                         <tr>
                             <th>Task</th>

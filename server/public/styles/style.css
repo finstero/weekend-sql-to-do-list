@@ -1,0 +1,99 @@
+/* body{
+    background-color: #A0B3AD;
+} */
+/* .container{
+    color: white;
+} */
+
+/* .table{
+    color: white;
+} */
+
+/* .input{
+    background-color: #A0B3AD;
+    color: white;
+} */
+
+/* #priorityIn{
+    background-color: #706873;
+    color: white;
+} */
+
+
+/* #taskButton{
+    background-color: #706873;
+} */
+
+/* .markComplete{ check for other use of this class. might be able to delete
+    background-color: #706873;
+    color: white;
+} */
+
+/* main color scheme - green background */
+
+/* .deleteTask{
+    background-color: #B05C5A;
+}
+
+.darkText{
+    color: #706873;
+}
+
+.mainColors{
+    background-color: #A0B3AD;
+}
+
+.darkBackground{
+    background-color: #706873;
+}
+
+.mainText{
+    color: white;
+} */
+
+
+
+
+/* New Color Scheme - pink background */
+
+/* .deleteTask{
+    background-color: #E2B76B;
+}
+
+.darkText{
+    color: #65A478;
+}
+
+.mainColors{
+    background-color: #E2A39C;
+}
+
+.darkBackground{
+    background-color: #473857;
+}
+
+.mainText{
+    color: white;
+} */
+
+/* New Color Scheme - grey background */
+
+.deleteTask{
+    background-color: #DF6C69;
+}
+
+.darkText{
+    color: #576973;
+}
+
+.mainColors{
+    background-color: #BDB4C5;
+}
+
+.darkBackground{
+    background-color: #DDCD99;
+}
+
+.mainText{
+    color: white;
+}

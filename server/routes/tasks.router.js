@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 
 // get route for all tasks
 router.get('/', (req, res) => {
-    let queryText = 'SELECT * FROM "tasks" ORDER BY "priority";';
+    let queryText = 'SELECT * FROM "tasks" ORDER BY "complete";';
     pool.query(queryText).then(result => {
         res.send(result.rows);
     })
