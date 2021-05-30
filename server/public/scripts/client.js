@@ -11,6 +11,8 @@ function onLoad(){
     $('#taskButton').on('click', addTask);
     $('#displayTasks').on('click', '.deleteTask', deleteHandler);
     $('#displayTasks').on('click', '.markComplete', handleComplete);
+
+    // swal('Hello World!');
 }
 
 // grabs id in data when mark completed button clicked
@@ -75,22 +77,26 @@ function addTask(){
     newTask.notes = notesVal;
     
     if (!taskVal){
-
+        swal('Oops!', 'Please make sure you enter a task.');
     }
-
-    $.ajax({
-        type: 'POST',
-        url: '/tasks',
-        data: newTask
-    })
-    .then ( response => {
-        console.log('post response from server', response);
-        getTasks();
-    })
-    .catch( error => {
-        console.log('error in post', error);
-        alert('unable to add task. try again later');
-    });
+    else if (priorityVal == 'priority'){
+        swal('Oops!', 'Please make sure you choose a priority.');
+    }
+    else {
+        $.ajax({
+            type: 'POST',
+            url: '/tasks',
+            data: newTask
+        })
+        .then ( response => {
+            console.log('post response from server', response);
+            getTasks();
+        })
+        .catch( error => {
+            console.log('error in post', error);
+            alert('unable to add task. try again later');
+        });
+    }
 }
 
 
