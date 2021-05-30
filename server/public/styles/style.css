@@ -10,11 +10,12 @@ h1{
 
 .addPadding{
     text-align: center;
-    padding-top: 2em;
+    padding-top: 3em;
 }
 
-#priorityIn{
+select{
     text-align: center;
+    text-align-last: center;
 }
 
 

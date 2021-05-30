@@ -1,3 +1,6 @@
+-- database name: practice_todo
+-- (or whatever you want. see pool.js)
+
 CREATE TABLE "tasks" (
 	"id" SERIAL PRIMARY KEY,
 	"task" VARCHAR(100),
