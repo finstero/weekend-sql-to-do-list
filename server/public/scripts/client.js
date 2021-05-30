@@ -156,7 +156,7 @@ function renderTasks(tasks) {
         }
         else if (task.complete == true){
             $('#displayTasks').append(`
-                <tr>
+                <tr class="darkText">
                     <td><del>${task.task}</del></td>
                     <td><del>${task.priority}</del></td>
                     <td><del>${task.notes}</del></td>

@@ -1,0 +1,39 @@
+body{
+    background-color: #A0B3AD;
+}
+.container{
+    color: white;
+}
+
+.table{
+    color: white;
+}
+
+.input{
+    background-color: #A0B3AD;
+    color: white;
+}
+
+#priorityIn{
+    background-color: #706873;
+    color: white;
+}
+
+
+#taskButton{
+    background-color: #706873;
+}
+
+.markComplete{
+    background-color: #706873;
+    color: white;
+}
+
+.deleteTask{
+    background-color: #B05C5A;
+    color: white;
+}
+
+.darkText{
+    color: #706873;
+}
