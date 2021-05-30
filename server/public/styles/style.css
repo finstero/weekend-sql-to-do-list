@@ -1,39 +1,51 @@
-body{
+/* body{
     background-color: #A0B3AD;
-}
-.container{
+} */
+/* .container{
     color: white;
-}
+} */
 
-.table{
+/* .table{
     color: white;
-}
+} */
 
-.input{
+/* .input{
     background-color: #A0B3AD;
     color: white;
-}
+} */
 
-#priorityIn{
+/* #priorityIn{
     background-color: #706873;
     color: white;
-}
+} */
 
 
-#taskButton{
+/* #taskButton{
     background-color: #706873;
-}
+} */
 
-.markComplete{
+/* .markComplete{ check for other use of this class. might be able to delete
     background-color: #706873;
     color: white;
-}
+} */
 
 .deleteTask{
     background-color: #B05C5A;
-    color: white;
 }
 
 .darkText{
     color: #706873;
 }
+
+.mainColors{
+    background-color: #A0B3AD;
+}
+
+.darkBackground{
+    background-color: #706873;
+}
+
+.mainText{
+    color: white;
+}
+

@@ -149,8 +149,8 @@ function renderTasks(tasks) {
                     <td>${task.task}</td>
                     <td>${task.priority}</td>
                     <td class="appendComplete">${task.notes}</td>
-                    <td><button class="markComplete btn btn-light btn-sm" data-id="${task.id}" data-complete="${task.complete}">complete</button></td>
-                    <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">delete</button></td>
+                    <td><button class="markComplete btn btn-light btn-sm darkBackground mainText" data-id="${task.id}" data-complete="${task.complete}">complete</button></td>
+                    <td><button class="deleteTask mainText btn btn-light btn-sm" data-id="${task.id}">delete</button></td>
                 </tr>
             `);
         }
@@ -161,7 +161,7 @@ function renderTasks(tasks) {
                     <td><del>${task.priority}</del></td>
                     <td><del>${task.notes}</del></td>
                     <td></td>
-                    <td><button class="deleteTask btn btn-light btn-sm" data-id="${task.id}">delete</button></td>
+                    <td><button class="deleteTask mainText btn btn-light btn-sm" data-id="${task.id}">delete</button></td>
                 </tr>
         `);
         }
