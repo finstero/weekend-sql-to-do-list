@@ -1,28 +1,22 @@
-/* body{
-    background-color: #A0B3AD;
-} */
-/* .container{
-    color: white;
-} */
+body{
+    font-family: Gill Sans, sans-serif;
+}
 
-/* .table{
-    color: white;
-} */
+h1{
+    padding-top: 0.6em;
+    padding-bottom: 0.5em;
+    text-align-last: center;
+}
 
-/* .input{
-    background-color: #A0B3AD;
-    color: white;
-} */
+.addPadding{
+    text-align: center;
+    padding-top: 2em;
+}
 
-/* #priorityIn{
-    background-color: #706873;
-    color: white;
-} */
+#priorityIn{
+    text-align: center;
+}
 
-
-/* #taskButton{
-    background-color: #706873;
-} */
 
 /* .markComplete{ check for other use of this class. might be able to delete
     background-color: #706873;
@@ -31,7 +25,7 @@
 
 /* main color scheme - green background */
 
-/* .deleteTask{
+.deleteTask{
     background-color: #B05C5A;
 }
 
@@ -49,7 +43,7 @@
 
 .mainText{
     color: white;
-} */
+}
 
 
 
@@ -78,7 +72,7 @@
 
 /* New Color Scheme - grey background */
 
-.deleteTask{
+/* .deleteTask{
     background-color: #DF6C69;
 }
 
@@ -95,5 +89,9 @@
 }
 
 .mainText{
+    color: white;
+} */
+
+::placeholder{
     color: white;
 }
