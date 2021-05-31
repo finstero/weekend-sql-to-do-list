@@ -117,7 +117,7 @@ function addTask(){
 
         // clear task and notes inputs. set priority select back to default 'select'.
         $('.input').val('');
-        $('#priorityIn').val('priority');
+        $('#priorityIn').val('choose priority');
     }
 }
 
