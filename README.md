@@ -20,3 +20,5 @@ User given option to complete or delete task. Completed tasks are crossed out, m
 Application will scale with window. Not yet recommended for mobile use.
 
 
+![screenshot](./screenshot/task-list.png)
+
